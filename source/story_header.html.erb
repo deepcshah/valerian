@@ -1,0 +1,22 @@
+<header id="navigation" class="post <%= current_page.data.color %>">
+  <div id="nav-header">
+    <div id="post-header-wrapper">
+      <img src="<%= current_page.data.description_image %>">
+      <h1><%= current_page.data.description %></h1>
+      <p><%= current_page.data.meta %></p>
+    </div>
+  </div>
+  <div id="nav-wrap">
+    <a href="/" id="logo">
+      <%= image_tag "logo-white.png", {class: "2x", width: 60, height: 60} %>
+    </a>
+    <ul>
+      <li>
+        <a href="/">Projects</a>
+      </li>
+      <li>
+        <a href="/about.html">About</a>
+      </li>
+    </ul>
+  </div>
+</header>

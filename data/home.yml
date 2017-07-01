@@ -1,0 +1,12 @@
+thumbnails:
+  - image: /images/thumb-saavnmobile.png
+    color: green
+    company: Saavn
+    description: Designing with constraint.
+    meta: Saavn · June 2013 — Present
+  - image: /images/thumb-livestreammobile.png
+    color: red
+    company: Livestream
+    description: The world’s leading live video platform.
+    meta: Livestream · December 2011 — June 2013
+

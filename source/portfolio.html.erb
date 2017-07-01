@@ -1,0 +1,112 @@
+---
+title: Deep Shah · Designer
+pageable: true
+per_page: 10
+---
+
+<section>
+    <h2>Hi! 🙌🏽 My name is Deep. I’m a product designer in Brooklyn. 🗽</h2>
+    <p>Check out some of my work below. 👇🏽</p>
+</section>
+
+<section id="portfolio">
+  <ul id="cards">
+    <% page_articles.each_with_index do |article, i| %>
+    <% if article.data.category == 'portfolio' %>
+    <li class="card">
+      <div class="card-content">
+        <!-- <img class="2x grey" src="<%= article.data.thumbnail %>" /> -->
+      <!-- <% link_to article, :title => "#{article.title}", :class => "thumbnail #{article.data.color}" do %> -->
+        <% link_to article, :class => "thumbnail" do %>
+          <img class="2x grey" src="<%= article.data.thumbnail %>"/>
+        <% end %>
+        <!-- <div class="meta"> -->
+          <% link_to article, :class => "meta-title" do %>
+            <%= article.data.title %>
+          <% end %>
+          <p class="meta"><%= article.data.meta %></p>
+          <p><%= article.data.description %></p>
+          <!-- <p><%= article.summary %></p> -->
+          <% link_to article, :class => "button" do %>Read More &rarr;<% end %>
+        <!-- </div> -->
+      <!-- <% end %> -->
+      </div>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+  <!--<div class="column">
+    <ul id="cards">
+      <h3>Writing</h3>
+      <% page_articles.each_with_index do |article, i| %>
+      <% if article.data.category == 'writing' %>
+      <li class="card">
+        <% link_to article, :title => "#{article.title}", :class => "thumbnail #{article.data.color}" do %>
+          <img class="2x grey" src="<%= article.data.thumbnail %>"/>
+          <div class="meta">
+            <h3><%= article.data.title %></h3>
+            <p><%= article.data.description %></p>
+          </div>
+        <% end %>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="column">
+    <ul id="cards">
+      <h3>Work</h3>
+      <% page_articles.each_with_index do |article, i| %>
+      <% if article.data.category == 'portfolio' %>
+      <li class="card">
+        <% link_to article, :title => "#{article.title}", :class => "thumbnail #{article.data.color}" do %>
+          <img class="2x grey" src="<%= article.data.thumbnail %>"/>
+          <div class="meta">
+            <h3><%= article.data.title %></h3>
+            <p><%= article.data.description %></p>
+          </div>
+        <% end %>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div> -->
+
+
+        <!-- <aside>
+          <h2>Recent Articles</h2>
+          <ol>
+            <% blog.articles[0...10].each do |article| %>
+              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+            <% end %>
+          </ol>
+
+          <h2>Tags</h2>
+          <ol>
+            <% blog.tags.each do |tag, articles| %>
+              <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+            <% end %>
+          </ol>
+
+          <h2>By Year</h2>
+          <ol>
+            <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+              <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+            <% end %>
+          </ol>
+        </aside> -->
+
+<!-- <% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %> -->
+</section>

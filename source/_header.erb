@@ -1,0 +1,24 @@
+<header id="navigation">
+  <!-- <a href="/" id="logo">
+    <%= image_tag "logo-blue.png", {class: "2x", width: 60, height: 60} %>
+  </a> -->
+  <h2><a href="/">Deep Shah</a></h2>
+  <ul>
+    <!-- <li>
+      <a href="/writing">Writing</a>
+    </li> -->
+    <li>
+      <%= link_to 'Work', '/', nav_active_blog('index.html') %>
+    </li>
+    <li>
+      <%= link_to 'Labs', '/labs', nav_active('labs.html') %>
+    </li>
+    <li>
+      <%= link_to 'About', '/about', nav_active('about.html') %>
+    </li>
+    <li>
+      <%= link_to 'Blog', 'http://deepshah.svbtle.com' %>
+      <svg class="icon icon-pop"><use xlink:href="#icon-pop"></use></svg>
+    </li>
+  </ul>
+</header>

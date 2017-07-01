@@ -1,0 +1,98 @@
+---
+title: Deep Shah · Designer
+pageable: true
+per_page: 10
+---
+
+<!-- <section>
+    <h2>Hi! 🙌🏽 My name is Deep. I’m a product designer in Brooklyn. 🗽</h2>
+    <p>Check out some of my work below. 👇🏽</p>
+</section> -->
+
+<section id="intro">
+  <!-- <div class="hero"></div> -->
+  <div class="row">
+    <div class="column-wrap">
+      <div class="column">
+        <p class="meta">Currently</p>
+        <p>Designing software for small businesses at <a href="http://www.behalf.com/">Behalf</a>. We are making it easier for small businesses to get access to the capital that they need to run their businesses.</p>
+        <p class="meta">Why</p>
+        <p>I’m driven to build impactful products that stay true to the user. At Behalf, our hope is to build a platform that empowers businesses to grow on their own terms.</p>
+        <p class="meta">Previously</p>
+        <p>Most recently, I was designing with big data to help create better outcomes for cancer patients. Prior to that, I was at <a class="saavn" href="http://www.saavn.com/">Saavn</a>, where I led the design for their Android app. I cut my teeth at <a class="livestream" href="http://www.livestream.com/">Livestream</a>.</p>
+      </div>
+    </div>
+    <div class="column-wrap">
+      <div class="column">
+        <p class="meta">Philosophy</p>
+        <p>I believe design is a bridge between technology &amp; people. At the end it is about solving a problem — for the people or the business or both, if you are lucky.</p>
+        <p>I prefer working creating solutions that provide real value to people. My favorite teams are ones where titles are irrelevant, and everyone takes ownership without ego.</p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <ul id="cards">
+    <% page_articles.each_with_index do |article, i| %>
+    <% if article.data.category == 'portfolio' %>
+    <!-- <li class="card"> -->
+    <% link_to article, :class => "card" do %>
+      <div class="card-content">
+        <!-- <% link_to article, :class => "thumbnail" do %> -->
+        <div class="thumbnail">
+          <img class="2x grey" src="<%= article.data.thumbnail %>"/>
+        </div>
+        <!-- <% end %> -->
+          <!-- <% link_to article, :class => "meta-title" do %> -->
+          <h2 class="meta-title"><%= article.data.title %></h2>
+          <!-- <% end %> -->
+          <p class="meta"><%= article.data.meta %></p>
+          <p><%= article.data.description %></p>
+          <!-- <% link_to article, :class => "button" do %>Read More &rarr;<% end %> -->
+          <p class="button">Read More &rarr;</p>
+      </div>
+    <% end %>
+    <!-- </li> -->
+    <% end %>
+    <% end %>
+  </ul>
+
+        <!-- <aside>
+          <h2>Recent Articles</h2>
+          <ol>
+            <% blog.articles[0...10].each do |article| %>
+              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+            <% end %>
+          </ol>
+
+          <h2>Tags</h2>
+          <ol>
+            <% blog.tags.each do |tag, articles| %>
+              <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+            <% end %>
+          </ol>
+
+          <h2>By Year</h2>
+          <ol>
+            <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+              <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+            <% end %>
+          </ol>
+        </aside> -->
+
+<!-- <% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %> -->
+</section>

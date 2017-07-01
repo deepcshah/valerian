@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width">
+
+    <%= stylesheet_link_tag "normalize", "all" %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <%= javascript_include_tag  "jquery.velocity-0.1.0" %>
+
+    <title><%= current_page.data.title || "Deep Shah" %></title>
+
+    <!-- <script type="text/javascript" src="//fast.fonts.net/jsapi/41c0bf38-47c0-4468-8894-823b34c8e102.js"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/41c0bf38-47c0-4468-8894-823b34c8e102.css"/>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Work+Sans:300,400,500,600,700" rel="stylesheet"> -->
+
+    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/apple-touch-icon-114x114.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25095247-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-pop" viewBox="0 0 1024 1024">
+          <title>pop</title>
+          <path class="path1" d="M191.985 438.857c-25.239 0-45.699 20.432-45.699 45.723v347.41c0 25.252 20.432 45.723 45.723 45.723h347.41c25.252 0 45.723-20.472 45.723-45.699v-27.444h146.286v73.143c0 80.914-65.495 146.286-146.286 146.286h-438.857c-80.791 0-146.286-65.371-146.286-146.286v-438.857c0-80.457 65.495-146.286 146.286-146.286h73.143v146.286h-27.444zM414.476 731.429c-67.326 0-121.905-65.367-121.905-146.286v-438.857c0-80.453 54.579-146.286 121.905-146.286h487.619c67.322 0 121.905 65.833 121.905 146.286v438.857c0 80.919-54.583 146.286-121.905 146.286h-487.619zM438.857 539.419c0 25.252 20.432 45.723 45.723 45.723h347.41c25.252 0 45.723-20.432 45.723-45.723v-347.41c0-25.252-20.432-45.723-45.723-45.723h-347.41c-25.252 0-45.723 20.432-45.723 45.723v347.41z"></path>
+          <path class="path2" d="M814.334 190.376c10.115 0 18.316 8.209 18.316 18.316v237.654c0 10.115-5.792 12.524-12.953 5.363l-248.38-248.38c-7.154-7.154-4.744-12.953 5.363-12.953h237.654zM663.182 295.194l64.65 64.65-176.408 176.408-64.65-64.65 176.408-176.408z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+  </head>
+
+  <body class="<%= page_classes %>">
+    <!-- <div class="animation-wrapper"> -->
+      <section id="site">
+        <%= partial "header" %>
+        <%= yield %>
+        <%= partial "footer" %>
+      </section>
+      <!-- <div class="animation-container"></div> -->
+    <!-- </div> -->
+  </body>
+</html>
