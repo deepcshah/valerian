@@ -159,13 +159,3 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-activate :deploy do |deploy|
-  deploy.method   = :sftp
-  deploy.host     = 'sftp.s116583.gridserver.com'
-  deploy.port     = 22
-  deploy.path     = 'domains/deepshah.com/html'
-  # Optional Settings
-  deploy.user     = 'chandreshshah.com' # no default
-  deploy.password = 'Tr0p1lfunch' # no default
-  deploy.build_before = true # default: false
-end
