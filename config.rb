@@ -132,14 +132,14 @@ set :images_dir, 'images'
 
 # activate gibberish
 
-  activate :gibberish do |gibberish|
+#  activate :gibberish do |gibberish|
 
-    gibberish.password = 'deepshahportfolioyo'
-    gibberish.encrypt '/cota-analytics/index.html'
+    # gibberish.password = 'deepshahportfolioyo'
+    # gibberish.encrypt '/cota-analytics/index.html'
     # gibberish.encrypt '/cota-pigments/index.html'
     # gibberish.encrypt '/cota-clinic/index.html'
 
-  end
+#  end
 
 # Build-specific configuration
 configure :build do
@@ -159,3 +159,13 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
+activate :deploy do |deploy|
+  deploy.method   = :sftp
+  deploy.host     = ''
+  deploy.port     =
+  deploy.path     = ''
+  # Optional Settings
+  deploy.user     = '' # no default
+  deploy.password = '' # no default
+  deploy.build_before = true # default: false
+end
