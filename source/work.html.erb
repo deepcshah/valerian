@@ -1,21 +1,59 @@
-<section>
+---
+title: Deep Shah · Work
+pageable: true
+per_page: 10
+---
+
+<section id="portfolio">
   <ul id="cards">
     <% page_articles.each_with_index do |article, i| %>
     <% if article.data.category == 'portfolio' %>
-    <li class="card">
-      <% link_to article, :title => "#{article.title}", :class => "thumbnail #{article.data.color}" do %>
-        <img class="2x grey" src="<%= article.data.thumbnail %>"/>
-        <div class="meta">
-          <h3><%= article.data.title %></h3>
-          <p><%= article.data.description %></p>
+    <!-- <li class="card"> -->
+    <% link_to article, :class => "card" do %>
+      <div class="card-content">
+        <!-- <% link_to article, :class => "thumbnail" do %> -->
+        <div class="thumbnail">
+          <img class="2x grey" src="<%= article.data.thumbnail %>"/>
         </div>
-      <% end %>
-    </li>
+        <!-- <% end %> -->
+          <!-- <% link_to article, :class => "meta-title" do %> -->
+          <h2 class="meta-title"><%= article.data.title %></h2>
+          <!-- <% end %> -->
+          <p class="meta"><%= article.data.meta %></p>
+          <p><%= article.data.description %></p>
+          <!-- <% link_to article, :class => "button" do %>Read More &rarr;<% end %> -->
+          <p class="button">Read More &rarr;</p>
+      </div>
+    <% end %>
+    <!-- </li> -->
     <% end %>
     <% end %>
   </ul>
 
-<% if paginate && num_pages > 1 %>
+        <!-- <aside>
+          <h2>Recent Articles</h2>
+          <ol>
+            <% blog.articles[0...10].each do |article| %>
+              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+            <% end %>
+          </ol>
+
+          <h2>Tags</h2>
+          <ol>
+            <% blog.tags.each do |tag, articles| %>
+              <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+            <% end %>
+          </ol>
+
+          <h2>By Year</h2>
+          <ol>
+            <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+              <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+            <% end %>
+          </ol>
+        </aside> -->
+
+<!-- <% if paginate && num_pages > 1 %>
   <p>Page <%= page_number %> of <%= num_pages %></p>
 
   <% if prev_page %>
@@ -27,5 +65,5 @@
   <% if next_page %>
     <p><%= link_to 'Next page', next_page %></p>
   <% end %>
-<% end %>
+<% end %> -->
 </section>

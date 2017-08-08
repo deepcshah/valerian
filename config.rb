@@ -97,7 +97,7 @@ activate :syntax
 # Reload the browser automatically whenever files change
 activate :livereload
 
-# Methods defined in the helpers block are available in templates
+# Methods defined in the helpers block are available in templates # {:class => current.to_s}
 helpers do
   def nav_active_blog(path)
     current = /^(.+?)\//.match(current_page.path.to_s)
@@ -107,7 +107,7 @@ helpers do
     elsif current == "blog/"
       {:class => "active"}
     else
-      {:class => current.to_s}
+      {}
     end
   end
 

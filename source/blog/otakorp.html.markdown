@@ -2,7 +2,7 @@
 title: Otakorp Brand
 date: 2011-08-12
 tags: portfolio
-category: portfolio
+category: old
 company: Otakorp
 thumbnail: /images/thumb-otakon@2x.png
 color: blue

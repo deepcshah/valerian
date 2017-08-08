@@ -2,7 +2,7 @@
 title: Livestream for Producers
 date: 2013-10-12
 tags: portfolio
-category: portfolio
+category: old
 company: Livestream
 thumbnail: /images/thumb-livestreammobile@2x.png
 color: red

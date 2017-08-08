@@ -2,7 +2,7 @@
 title: Malai Sans
 date: 2010-01-12
 tags: portfolio
-category: portfolio
+category: old
 company: Typeface
 thumbnail: /images/thumb-malaisans@2x.png
 color: yellow
