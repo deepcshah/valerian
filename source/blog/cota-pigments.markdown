@@ -1,5 +1,5 @@
 ---
-title: COTA Design Modules
+title: Deep Shah · COTA Design Modules
 date: 2014-10-25
 tags: portfolio
 category: portfolio
@@ -8,7 +8,7 @@ thumbnail: /images/thumb-cotasystem.png
 color: blue
 description: Codenamed ‘Pigments’, I built a live style guide to document the modular design elements I created for the design system I created for COTA’s family of products.
 description_image: /images/thumb-adigitaldesigner.png
-meta: COTA · Product Designer · October 2014 — April 2016
+meta: COTA · October 2014 — April 2016
 ---
 
 As the product team and I were fleshing out the details of the atomic data model for our platform, and I was designing the Clinic app (read about it [here](/cota-clinic/)), I realized the importance of laying down a foundation for a modular, flexible design system. This was super important in a data heavy product suite such as ours, especially since it would eventually be a living product.

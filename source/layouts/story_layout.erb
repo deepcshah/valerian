@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag "normalize", "all" %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <%= javascript_include_tag  "jquery.velocity-0.1.0", "instafeed.min", "pack" %>
+    <%= javascript_include_tag  "jquery.velocity-0.1.0" %>
 
     <style>
       <%= Rouge::Themes::Github.render(:scope => '.highlight') %>
@@ -54,6 +54,13 @@
   <body class="<%= page_classes %>">
     <section id="article">
     <%= partial "header" %>
+    <div class="row">
+      <div class="column-wrap">
+        <div class="column">
+          <h2 class="heading center"><a href="/work">&larr; Work</a></h2>
+        </div>
+      </div>
+    </div>
     <article class="work">
       <h2 class="title"><%= current_page.data.title %></h2>
       <p class="meta"><%= current_page.data.meta %></p>
@@ -74,7 +81,7 @@
     <% featured = next_article %>
     <% end %>
 
-    <ul id="cards">
+    <!-- <ul id="cards">
       <a class="card" href="<%= featured.url %>">
         <div class="card-content">
           <p class="meta strong">Now read this</p>
@@ -83,7 +90,7 @@
           <p class="button" href="<%= featured.url %>">Continue Reading &rarr;</p>
         </div>
       </li>
-    </ul>
+    </ul> -->
 
     <%= partial "footer" %>
     </section>

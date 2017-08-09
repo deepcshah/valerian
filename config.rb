@@ -159,13 +159,3 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-activate :deploy do |deploy|
-  deploy.method   = :sftp
-  deploy.host     = ''
-  deploy.port     =
-  deploy.path     = ''
-  # Optional Settings
-  deploy.user     = '' # no default
-  deploy.password = '' # no default
-  deploy.build_before = true # default: false
-end

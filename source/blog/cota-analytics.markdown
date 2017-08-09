@@ -1,5 +1,5 @@
 ---
-title: COTA Analytics
+title: Deep Shah · COTA Analytics
 date: 2014-10-27
 tags: portfolio
 category: portfolio
@@ -8,7 +8,7 @@ thumbnail: /images/thumb-cotaanalytics@2x.png
 color: blue
 description: I designed and helped implement an analytics app to help oncology providers and other medical stakeholders use their data in order to make better medical decisions.
 description_image: /images/thumb-adigitaldesigner.png
-meta: COTA · Product Designer · October 2014 — April 2016
+meta: COTA · October 2014 — April 2016
 ---
 
 ***Note:** You can view the prototype for this project [here](https://invis.io/QE5TH6GKN), but it requires a password. Need one? [Get in touch](mailto:hi@deepshah.com)!*

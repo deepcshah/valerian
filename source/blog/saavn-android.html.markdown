@@ -1,5 +1,5 @@
 ---
-title: Saavn for Android
+title: Deep Shah · Saavn for Android
 date: 2014-04-12
 tags: portfolio
 category: portfolio
@@ -8,7 +8,7 @@ thumbnail: /images/thumb-saavnmobile@2x.png
 color: green
 description: Most of my time at Saavn was spent leading the product design for Saavn’s Android app. Saavn is a service primarily marketed towards South Asians, for whom Android is by far the leading platform of choice. The lack of stable (and fast) Internet connectivity throughout the region made this a great design challenge to take on.
 description_image: /images/screenshot-saavn.png
-meta: Saavn · Senior Designer · June 2013 — October 2014
+meta: Saavn · June 2013 — October 2014
 ---
 
 Saavn is India’s largest and most prolific music streaming service.

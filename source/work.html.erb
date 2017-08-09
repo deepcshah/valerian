@@ -4,66 +4,55 @@ pageable: true
 per_page: 10
 ---
 
+<div class="row">
+  <div class="column-wrap">
+    <div class="column">
+      <h2 class="heading center">Work</h2>
+    </div>
+  </div>
+</div>
+
 <section id="portfolio">
   <ul id="cards">
     <% page_articles.each_with_index do |article, i| %>
     <% if article.data.category == 'portfolio' %>
-    <!-- <li class="card"> -->
     <% link_to article, :class => "card" do %>
       <div class="card-content">
-        <!-- <% link_to article, :class => "thumbnail" do %> -->
-        <div class="thumbnail">
-          <img class="2x grey" src="<%= article.data.thumbnail %>"/>
-        </div>
-        <!-- <% end %> -->
-          <!-- <% link_to article, :class => "meta-title" do %> -->
-          <h2 class="meta-title"><%= article.data.title %></h2>
-          <!-- <% end %> -->
-          <p class="meta"><%= article.data.meta %></p>
-          <p><%= article.data.description %></p>
-          <!-- <% link_to article, :class => "button" do %>Read More &rarr;<% end %> -->
-          <p class="button">Read More &rarr;</p>
+        <h3 class="meta-title"><%= article.data.title %></h3>
+        <!-- <p class="meta"><%= article.data.meta %></p> -->
+        <p><%= article.data.description %></p>
+        <p class="button">Read More &rarr;</p>
       </div>
     <% end %>
-    <!-- </li> -->
     <% end %>
     <% end %>
   </ul>
-
-        <!-- <aside>
-          <h2>Recent Articles</h2>
-          <ol>
-            <% blog.articles[0...10].each do |article| %>
-              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+  <!-- <div class="row">
+    <div class="column-wrap">
+      <div class="column">
+        <ul class="writing">
+          <% page_articles.each_with_index do |article, i| %>
+          <% if article.data.category == 'portfolio' %>
+          <li>
+            <% if article.data.company == 'Livestream' %>
+            <p><a class="livestream" href="<%= article.url %>"><%= article.title %></a></p>
+            <% elsif article.data.company == 'Saavn' %>
+            <p><a class="saavn" href="<%= article.url %>"><%= article.title %></a></p>
+            <% elsif article.data.company == 'COTA' %>
+            <p><a class="cota" href="<%= article.url %>"><%= article.title %></a></p>
+            <% elsif article.data.company == 'Behalf' %>
+            <p><a class="behalf" href="<%= article.url %>"><%= article.title %></a></p>
+            <% elsif article.data.company == 'MongoDB' %>
+            <p><a class="mongodb" href="<%= article.url %>"><%= article.title %></a></p>
+            <% else %>
+            <p><a href="<%= article.url %>"><%= article.title %></a></p>
             <% end %>
-          </ol>
-
-          <h2>Tags</h2>
-          <ol>
-            <% blog.tags.each do |tag, articles| %>
-              <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
-            <% end %>
-          </ol>
-
-          <h2>By Year</h2>
-          <ol>
-            <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-              <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
-            <% end %>
-          </ol>
-        </aside> -->
-
-<!-- <% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
-
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
-<% end %> -->
+            <h4><i><%= article.data.description %></i></h4>
+          </li>
+          <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div> -->
 </section>

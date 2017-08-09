@@ -1,5 +1,5 @@
 ---
-title: Saavn Music Feed
+title: Deep Shah · Saavn Music Feed
 date: 2013-10-12
 tags: portfolio
 category: portfolio
@@ -8,7 +8,7 @@ thumbnail: /images/thumb-saavnartistpages@2x.png
 color: yellow
 description: While at Saavn, we hacked something together for a new social initiative Firefox was heading up. As one of their new social partners, we quickly designed and implemented a sidebar for our listeners.
 description_image: /images/screenshot-saavn-firefox.png
-meta: Saavn · Senior Designer · June 2013 — October 2014
+meta: Saavn · June 2013 — October 2014
 ---
 
 While at Saavn, we hacked something together for a new social initiative Firefox was heading up. As one of their new social partners, we quickly designed and implemented a sidebar for our listeners.

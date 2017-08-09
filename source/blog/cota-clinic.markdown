@@ -1,5 +1,5 @@
 ---
-title: COTA Clinic
+title: Deep Shah · COTA Clinic
 date: 2014-10-26
 tags: portfolio
 category: portfolio
@@ -8,7 +8,7 @@ thumbnail: /images/thumb-cotaclinic@2x.png
 color: blue
 description: I designed and helped implement an Angular based application to facilitate manual data ingestion, verification, and entry of medical records.
 description_image: /images/thumb-adigitaldesigner.png
-meta: COTA · Product Designer · October 2014 — April 2016
+meta: COTA · October 2014 — April 2016
 ---
 
 ***Note:** You can view the prototype for this project [here](https://invis.io/2F5TH6BH5), but it requires a password. Need one? [Get in touch](mailto:hi@deepshah.com)!*

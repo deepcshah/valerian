@@ -82,6 +82,13 @@ body {
   background-color: rgba(235, 211, 0, .75);
 }
 
+.list {
+  padding: 0 0 0 1.15em;
+  p {
+    margin: 0;
+  }
+}
+
 a {
   color: rgba(35, 31, 32, 0.8);
   position: relative;
@@ -100,7 +107,7 @@ a {
     // opacity: 1;
     opacity: .34;
     position: absolute;
-    @include transition(all 200ms cubic-bezier(0.22, 0, 0.4, 1));
+    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
     // @include transition(all 200ms ease-in-out);
     width: 100%;
     z-index: -1;
@@ -192,17 +199,46 @@ a {
       }
     }
   }
+  &.instagram {
+    &:hover, &.active, &:focus {
+      &:before {
+        background: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      }
+    }
+  }
+  &.svbtle {
+    &:hover, &.active, &:focus {
+      &:before {
+        background-color: rgba(0, 0, 0, .75);
+      }
+    }
+  }
+  &.card {
+    &:before {
+      opacity: 0;
+    }
+    &:hover, &.active, &:focus {
+      &:before {
+        background-color: rgba(255, 255, 255, 1);
+        opacity: 0;
+      }
+    }
+  }
   &.button {
-    border: 1px solid rgba(40, 202, 255, 1);
+    // border: 1px solid rgba(40, 202, 255, 1);
+    // border: 1px solid rgba(35, 31, 32, .8);
     border-radius: 100pt;
-    color: rgba(40, 202, 255, 1);
+    // color: rgba(40, 202, 255, 1);
+    color: rgba(35, 31, 32, .8);
     font-size: .9em;
     font-weight: 600;
     text-transform: uppercase;
     padding: .5em .75em;
+    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
     &:hover {
-      background: rgba(40, 202, 255, 1);
-      color: white;
+      // background: rgba(40, 202, 255, 1);
+      background-color: rgba(245, 234, 119, 1);
+      // color: white;
       text-decoration: none;
     }
   }
@@ -210,20 +246,43 @@ a {
 
 p {
   &.button {
-    border: 1px solid rgba(40, 202, 255, 1);
+    // border: 1px solid rgba(40, 202, 255, 1);
+    /* border: 1px solid rgba(35, 31, 32, .8);
     border-radius: 100pt;
-    color: rgba(40, 202, 255, 1);
+    color: rgba(35, 31, 32, .8); */
     font-size: .9em !important;
     font-weight: 600 !important;
     text-transform: uppercase;
-    padding: .5em .75em;
+    position: relative;
+    /* padding: .5em .75em;
     text-decoration: none;
-    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
-    &:hover {
-      background: rgba(40, 202, 255, 1);
-      color: white;
-      text-decoration: none;
+    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1)); */
+    &:before {
+      background-color: rgba(35, 31, 32, .65);
+      bottom: -2px;
+      content: '';
+      height: 1px;
+      left: 0;
+      opacity: .34;
+      position: absolute;
+      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      width: 100%;
+      z-index: -1;
     }
+    &:hover, &.active, &:focus {
+      outline-width: 0;
+      &:before {
+        background-color: rgba(245, 234, 119, 1);
+        bottom: 2px;
+        height: .8em; //24px 1.3em
+        opacity: 1;
+        transform: none;
+      }
+    }
+    /* &:hover {
+      background-color: rgba(245, 234, 119, 1);
+      text-decoration: none;
+    } */
   }
 }
 
@@ -304,15 +363,8 @@ section {
   }
   &#intro {
     padding: 0;
-    .hero {
-      background: url('/images/deep.jpg') no-repeat 10% 30%;
-      -webkit-background-size: 1045px;
-      -moz-background-size: 1045px;
-      -o-background-size: 1045px;
-      background-size: 1045px;
-      height: 35em;
-      margin-bottom: 4em;
-      width: auto;
+    p {
+      margin: 0 0 2em 0;
     }
   }
   &#about {
@@ -398,9 +450,14 @@ p {
 
 .heading {
   color: rgba(72, 84, 99, 1);
-  font-weight: 500;
+  // font-size: 1em;
+  font-weight: 300;
   line-height: 1.3;
-  margin: 1em 0 1.5em 0;
+  // margin: 1em 0 1.5em 0;
+  margin: 0 0 1em 0;
+  &.center {
+    text-align: center;
+  }
 }
 
 .meta {
@@ -410,6 +467,10 @@ p {
   letter-spacing: .75px;
   margin: 0em 0 1em 0;
   text-transform: uppercase;
+}
+
+.fade {
+  color: rgba(35, 31, 32, .35);
 }
 
 em, .em {
@@ -689,17 +750,17 @@ Cards
   }
 
   .card {
-    background: rgba(255, 255, 255, .75);
+    background-color: rgba(255, 255, 255, .75);
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 5pt;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     list-style-type: none;
     margin: 1em;
-    padding: 3%;
+    padding: 2em;
     position: relative;
     z-index: 2;
 
-    min-width: calc(50% - 3em);
+    min-width: calc(100% - 3em);
 
     // flex: 0 calc(50% - 2em) 1;
 
@@ -723,8 +784,12 @@ Cards
       @include display(block);
     }
 
+    .button {
+      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+    }
+
     &:hover {
-      background: rgba(255, 255, 255, .9);
+      background-color: rgba(255, 255, 255, 1);
 
       // border: 1px solid rgba(40, 202, 255, 1);
       border: 1px solid rgba(0, 0, 0, .4);
@@ -735,11 +800,18 @@ Cards
       // box-shadow: 0px 1px 20px 0px rgba(40, 202, 255, 0.4);
       box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.1);
 
-      transform: scale(1.01);
+      transform: scale(1.02);
       .button {
-        background: rgba(40, 202, 255, 1);
-        color: white;
+        background-color: rgba(245, 234, 119, 1);
         text-decoration: none;
+        outline-width: 0;
+        &:before {
+          background-color: rgba(245, 234, 119, 1);
+          bottom: 2px;
+          height: .8em; //24px 1.3em
+          opacity: 1;
+          transform: none;
+        }
       }
       .thumbnail {
         /* img {
@@ -798,8 +870,8 @@ Cards
       color: rgba(72, 84, 99, 1);
       border-bottom: 1px solid rgba(255, 255, 255, 0);
       font-family: $sans-serif;
-      font-size: 1.6em;
-      font-weight: 500;
+      // font-size: 1.6em;
+      font-weight: 400;
       float: left;
       margin: 0 0 .1em 0;
     }
@@ -932,7 +1004,7 @@ article {
     width: auto;
   }
   h2 {
-    font-weight: 500;
+    font-weight: 400;
     margin: 0 0 .1em 0;
     padding: 0;
     &.lead {
@@ -942,14 +1014,14 @@ article {
     }
   }
   h3 {
-    font-weight: 500;
+    font-weight: 400;
     margin: 1em 0;
   }
   h1 {
     margin: 0 0 .5em 0;
   }
   p {
-    color: rgba(35, 31, 32, 1);
+    color: rgba(35, 31, 32, 0.8);
     font-family: $serif;
     margin: 0 0 1em 0;
     + h3, + h2, + h1 {
@@ -961,6 +1033,18 @@ article {
   }
   a {
     // font-weight: 700;
+  }
+}
+
+.hands-wrapper{
+  &:hover {
+    .hands {
+      animation: waver 0.65s alternate infinite;
+      transform-origin: 50% 70%;
+      animation-timing-function: ease-in-out;
+      display: inline-flex;
+      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+    }
   }
 }
 
@@ -978,6 +1062,7 @@ Footer
   float: left;
   padding: 2em 3em;
   position: relative;
+  width: 100%;
   /* width: calc(100% + 4em);
   margin: 5.6em -2em -2em -2em; */
   @media only screen
@@ -997,9 +1082,12 @@ Footer
     }
   }
   #footer-wrap {
-    background: rgba(255, 255, 255, 0.75);
+    border-top: 1px solid rgba(35, 31, 32, .25);
+    background: rgba(255, 255, 255, 1);
+    font-weight: 300;
     margin: 0 auto;
     width: 100%;
+    padding: 2em 0;
     position: relative;
     z-index: 2;
   }
@@ -1038,8 +1126,8 @@ Footer
     @include display(flex);
     @include flex-direction(row);
     @include flex-wrap(wrap);
-    @include justify-content(space-between);
-    @include align-content(space-between);
+    // @include justify-content(space-between);
+    // @include align-content(space-between);
 
     float: left;
     // padding: 0 1em;
@@ -1052,15 +1140,16 @@ Footer
       @include flex-wrap(nowrap);
       @include flex-grow(1);
       @include flex-basis(0);
-      @include justify-content(space-between);
-      @include align-content(space-between);
+      // @include justify-content(space-between);
+      // @include align-content(space-between);
       @include flex(1 1 calc(33% - 3em));
       flex: 1 0 auto;
       @include flex(1 0 auto);
       @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
       @include clearfix;
-      max-width: 30%;
-      min-width: 150px;
+      margin: 0 20px 20px 0;
+      max-width: 150px;
+      // min-width: 150px;
       &:before {
         content:'';
         float:left;
@@ -1078,3 +1167,8 @@ Footer
 /*=========================================
 Animations
 =========================================== */
+
+@keyframes waver {
+  0%, 100% {transform: rotate(0deg);}
+  50% {transform: rotate(20deg);}
+}
