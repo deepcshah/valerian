@@ -1,5 +1,5 @@
 ---
-title: Deep Shah · Otakorp Brand
+title: Otakorp Brand
 date: 2011-08-12
 tags: portfolio
 category: old

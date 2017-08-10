@@ -1,8 +1,8 @@
 @import "bourbon";
 
 $sans-serif: 'Gentona W00', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$serif: $sans-serif;
-// $serif: 'Plantin W01', garamond, baskerville, times, serif;
+// $serif: $sans-serif;
+$serif: 'Plantin W01', garamond, baskerville, times, serif;
 
 /*=========================================
 Reset
@@ -56,12 +56,8 @@ html,body {
 }
 
 body {
-  // background: #F4F7FA;
   background: #FFFFFF;
-  // background: rgba(5, 21, 26, 1);
-  // background: #222;
-  font: 16px/1 $sans-serif;
-  // color: #777;
+  font: 16px/1 $serif;
   color: rgba(72, 84, 99, 1);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
@@ -74,7 +70,6 @@ body {
 @include selection {
   color: rgb(122, 111, 0);
   background-color: rgba(235, 211, 0, .75);
-  // background-color: #EBD300;
 }
 
 .yellow {
@@ -98,17 +93,14 @@ a {
   box-sizing: border-box;
   z-index: 5;
   &:before {
-    // background-color: rgba(245, 234, 119, 1);
     background-color: rgba(35, 31, 32, .65);
     bottom: -2px;
     content: '';
     height: 1px;
     left: 0;
-    // opacity: 1;
     opacity: .34;
     position: absolute;
     @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
-    // @include transition(all 200ms ease-in-out);
     width: 100%;
     z-index: -1;
   }
@@ -125,7 +117,7 @@ a {
   &[class] {
     &:hover, &:focus {
       &:before {
-        opacity: .24;
+        opacity: .34;
       }
     }
     &:before {
@@ -153,49 +145,49 @@ a {
   &.mongodb {
     &:hover, &.active, &:focus {
       &:before {
-        background-color: rgba(127, 200, 86, .75);
+        background-color: rgba(127, 200, 86, 1);
       }
     }
   }
   &.behalf {
     &:hover, &.active, &:focus {
       &:before {
-        background-color: rgba(40, 202, 255, .75);
+        background-color: rgba(40, 202, 255, 1);
       }
     }
   }
   &.cota {
     &:hover, &.active, &:focus {
       &:before {
-        background-color: rgba(133, 98, 234, .75);
+        background-color: rgba(133, 98, 234, 1);
       }
     }
   }
   &.saavn {
     &:hover, &.active, &:focus {
       &:before {
-        background-color: rgba(48, 181, 90, .75);
+        background-color: rgba(48, 181, 90, 1);
       }
     }
   }
   &.livestream {
     &:hover, &.active, &:focus {
       &:before {
-        background-color: rgba(207, 32, 46, .75);
+        background-color: rgba(207, 32, 46, 1);
       }
     }
   }
   &.twitter {
     &:hover, &.active, &:focus {
       &:before {
-        background-color: rgba(29, 161, 242, .75);
+        background-color: rgba(29, 161, 242, 1);
       }
     }
   }
   &.dribbble {
     &:hover, &.active, &:focus {
       &:before {
-        background-color: rgba(234, 76, 137, .75);
+        background-color: rgba(234, 76, 137, 1);
       }
     }
   }
@@ -225,20 +217,16 @@ a {
     }
   }
   &.button {
-    // border: 1px solid rgba(40, 202, 255, 1);
-    // border: 1px solid rgba(35, 31, 32, .8);
     border-radius: 100pt;
-    // color: rgba(40, 202, 255, 1);
     color: rgba(35, 31, 32, .8);
+    font-family: $sans-serif;
     font-size: .9em;
     font-weight: 600;
     text-transform: uppercase;
     padding: .5em .75em;
     @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
     &:hover {
-      // background: rgba(40, 202, 255, 1);
       background-color: rgba(245, 234, 119, 1);
-      // color: white;
       text-decoration: none;
     }
   }
@@ -246,17 +234,11 @@ a {
 
 p {
   &.button {
-    // border: 1px solid rgba(40, 202, 255, 1);
-    /* border: 1px solid rgba(35, 31, 32, .8);
-    border-radius: 100pt;
-    color: rgba(35, 31, 32, .8); */
+    font-family: $sans-serif;
     font-size: .9em !important;
     font-weight: 600 !important;
     text-transform: uppercase;
     position: relative;
-    /* padding: .5em .75em;
-    text-decoration: none;
-    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1)); */
     &:before {
       background-color: rgba(35, 31, 32, .65);
       bottom: -2px;
@@ -279,17 +261,7 @@ p {
         transform: none;
       }
     }
-    /* &:hover {
-      background-color: rgba(245, 234, 119, 1);
-      text-decoration: none;
-    } */
   }
-}
-
-#site {
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.1);
-  margin: 40px auto; */
 }
 
 section, header, footer {
@@ -333,13 +305,14 @@ section, header, footer {
     and (min-width: 568px)
     and (max-width: 900px)
     and (-webkit-min-device-pixel-ratio: 2) {
-    .column-wrap {
-      @include flex(1 1 calc(50% - 2em));
-    }
+      .column-wrap {
+        @include flex(1 1 calc(50% - 2em));
+      }
   }
   @media only screen
     and (min-width: 320px)
     and (max-width: 568px) {
+      padding: 0;
     .column-wrap {
       min-width: 65%;
       @include flex(1 1 65%);
@@ -419,7 +392,6 @@ video {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  // color: rgba(100, 112, 115, 1);
   color: rgba(72, 84, 99, 1);
   font-weight: 500;
   line-height: 1.3;
@@ -450,10 +422,9 @@ p {
 
 .heading {
   color: rgba(72, 84, 99, 1);
-  // font-size: 1em;
+  font-family: $sans-serif;
   font-weight: 300;
   line-height: 1.3;
-  // margin: 1em 0 1.5em 0;
   margin: 0 0 1em 0;
   &.center {
     text-align: center;
@@ -570,7 +541,6 @@ Header
     top: 0px;
     left: 0px;
     right: 0px;
-    // z-index: 300;
     padding: 30px 30px 0px 30px;
   }
 
@@ -584,9 +554,9 @@ Header
 
   ul {
     float: right;
+    font-family: $sans-serif;
     list-style-type: none;
     margin-left: auto;
-    padding-top: .5%;
     position: relative;
     vertical-align: middle;
 
@@ -595,6 +565,9 @@ Header
       list-style-type: none;
       padding-left: 1.5em;
       position: relative;
+      p {
+        margin: 0;
+      }
       a {
         color: rgba(35, 31, 32, .5);
         @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
@@ -608,24 +581,6 @@ Header
           }
         }
       }
-      /* a {
-        border-bottom: 2px solid rgba(245, 234, 119, 1);
-        color: rgba(35, 31, 32, 1);
-        padding-bottom: 2px;
-        position: relative;
-        @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-
-        &:hover, &.active {
-          // background: rgba(235, 211, 0, 1);
-          background: rgba(245, 234, 119, 1);
-          // border-bottom: 1px solid rgba(40, 202, 255, 1);
-          border-bottom: 2px solid rgba(245, 234, 119, 1);
-          color: rgba(35, 31, 32, 1);
-        }
-      } */
     }
   }
   @media only screen
@@ -633,18 +588,19 @@ Header
     and (max-width: 568px) {
       padding: 1em;
       h2 {
-        display: block;
-        float: initial;
-        text-align: center;
+        width: 100%;
       }
       ul {
+        align-self: center;
+        display: flex;
         float: initial;
-        margin: 2em auto .5em;
-        text-align: center;
+        margin: 0;
         li {
-          display: inline-block;
-          float: initial;
-          margin: 0 0 0 2em;
+          margin: 0;
+          padding-left: 1em;
+          p {
+            margin-bottom: 0;
+          }
           &:first-child {
             margin: 0;
           }
@@ -726,12 +682,10 @@ Cards
 
 #cards {
   float: left;
-  // padding: 0 1em;
   padding: 0;
   margin: 0 auto;
 
   @include display(flex);
-  // @include flex-flow(row wrap);
   @include flex-direction(row);
   @include flex-wrap(wrap);
   @include justify-content(space-between);
@@ -755,7 +709,7 @@ Cards
     border-radius: 5pt;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     list-style-type: none;
-    margin: 1em;
+    margin: 1em -2em;
     padding: 2em;
     position: relative;
     z-index: 2;
@@ -767,7 +721,6 @@ Cards
     transform: scale(1);
 
     @include display(flex);
-    // @include flex-flow(row nowrap);
     @include flex-direction(row);
     @include flex-wrap(nowrap);
     @include flex-grow(1);
@@ -790,14 +743,7 @@ Cards
 
     &:hover {
       background-color: rgba(255, 255, 255, 1);
-
-      // border: 1px solid rgba(40, 202, 255, 1);
       border: 1px solid rgba(0, 0, 0, .4);
-
-      // box-shadow: 0 18px 24px rgba(0, 0, 0, 0.1), 0 18px 32px rgba(0, 0, 0, 0.1);
-      // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-
-      // box-shadow: 0px 1px 20px 0px rgba(40, 202, 255, 0.4);
       box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.1);
 
       transform: scale(1.02);
@@ -813,17 +759,10 @@ Cards
           transform: none;
         }
       }
-      .thumbnail {
-        /* img {
-          transform: scale(1);
-        }*/
-          opacity: .85;
-          outline: none;
-      }
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: $sans-serif;
+      // font-family: $sans-serif;
       font-style: normal;
     }
 
@@ -869,7 +808,6 @@ Cards
     .meta-title {
       color: rgba(72, 84, 99, 1);
       border-bottom: 1px solid rgba(255, 255, 255, 0);
-      font-family: $sans-serif;
       // font-size: 1.6em;
       font-weight: 400;
       float: left;
@@ -893,7 +831,6 @@ Cards
 
     p {
       margin: 0;
-      font-family: $serif;
     }
 
     .meta {
@@ -925,8 +862,9 @@ Cards
       padding: 0;
       .card {
         min-width: 65%;
-        @include flex(1 1 65%);
-        padding: 5%;
+        margin: 1em -1em;
+        @include flex(1 1 100%);
+        padding: 7.5%;
       }
   }
 }
@@ -954,13 +892,15 @@ article, figure, pre {
 
 article {
   margin: 0 auto;
-  padding: 2em 3em;
+  // padding: 2em 3em;
+  padding: 2em 0;
   max-width: 700px;
 
   @media only screen
     and (min-width: 320px)
     and (max-width: 568px) {
-      padding: 1em;
+      // padding: 1em;
+      padding: 1em 0;
   }
 
   header, section, figure, h1, h2, h3, h4, h5, h6, p {
@@ -987,7 +927,6 @@ article {
     }
     figcaption {
       display: inline-block;
-      font-family: $serif;
       font-size: .9em;
       font-style: italic;
       line-height: 1.5;
@@ -1010,8 +949,6 @@ article {
     &.lead {
       margin-bottom: .5em;
     }
-    &.title {
-    }
   }
   h3 {
     font-weight: 400;
@@ -1022,7 +959,6 @@ article {
   }
   p {
     color: rgba(35, 31, 32, 0.8);
-    font-family: $serif;
     margin: 0 0 1em 0;
     + h3, + h2, + h1 {
       margin: 1em 0 1em 0;
@@ -1030,9 +966,6 @@ article {
     &:last-child {
       margin: 0;
     }
-  }
-  a {
-    // font-weight: 700;
   }
 }
 
@@ -1054,21 +987,22 @@ Footer
 
 #footer {
   @include clearfix;
-  // background: #222;
-  // background: rgba(227, 118, 0, 1);
-  // background: rgba(235, 160, 0, .2);
-  // background: rgba(235, 130, 0, 0.1);
   background: #fff;
   float: left;
+  font-family: $sans-serif;
   padding: 2em 3em;
   position: relative;
   width: 100%;
-  /* width: calc(100% + 4em);
-  margin: 5.6em -2em -2em -2em; */
+  @media only screen
+    and (min-width: 568px)
+    and (max-width: 900px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      padding: 2em 2em;
+  }
   @media only screen
     and (min-width: 320px)
     and (max-width: 568px) {
-      padding: 3em 4em;
+      padding: 2em 1em;
   }
   .hands-wrapper{
     &:hover {
@@ -1092,16 +1026,6 @@ Footer
     z-index: 2;
   }
   p {
-    /* a {
-      border-bottom: 1px solid rgba(0, 0, 0, 1);
-      font-weight: 600;
-      padding-bottom: 2px;
-      transform: scale(1);
-      &:hover {
-        background: rgba(235, 211, 0, .5);
-        transform: scale(1.2);
-      }
-    } */
   }
   .row {
     padding: 0;
@@ -1115,7 +1039,6 @@ Footer
     li {
       float: left;
       list-style-type: none;
-      // margin-right: 2em;
     }
   }
 }
@@ -1126,22 +1049,15 @@ Footer
     @include display(flex);
     @include flex-direction(row);
     @include flex-wrap(wrap);
-    // @include justify-content(space-between);
-    // @include align-content(space-between);
-
     float: left;
-    // padding: 0 1em;
     margin: 0 auto;
     .insta-cell {
-      // min-width: calc(33% - 3em);
       margin-right: 0;
       @include display(flex);
       @include flex-direction(row);
       @include flex-wrap(nowrap);
       @include flex-grow(1);
       @include flex-basis(0);
-      // @include justify-content(space-between);
-      // @include align-content(space-between);
       @include flex(1 1 calc(33% - 3em));
       flex: 1 0 auto;
       @include flex(1 0 auto);
@@ -1149,7 +1065,6 @@ Footer
       @include clearfix;
       margin: 0 20px 20px 0;
       max-width: 150px;
-      // min-width: 150px;
       &:before {
         content:'';
         float:left;
@@ -1159,6 +1074,21 @@ Footer
         width: 100%;
         max-width: initial;
         min-width: 150px;
+      }
+      @media only screen
+        and (min-width: 568px)
+        and (max-width: 900px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          max-width: 150px;
+      }
+      @media only screen
+        and (min-width: 320px)
+        and (max-width: 568px) {
+          width: 100%;
+          max-width: 100%;
+          img {
+            width: 100%;
+          }
       }
     }
   }

@@ -1,5 +1,5 @@
 ---
-title: Deep Shah · COTA Clinic
+title: COTA Clinic
 date: 2014-10-26
 tags: portfolio
 category: portfolio

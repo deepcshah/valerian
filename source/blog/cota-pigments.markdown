@@ -1,5 +1,5 @@
 ---
-title: Deep Shah · COTA Design Modules
+title: COTA Design Modules
 date: 2014-10-25
 tags: portfolio
 category: portfolio

@@ -1,5 +1,5 @@
 ---
-title: Deep Shah · Livestream for Producers
+title: Livestream for Producers
 date: 2013-10-12
 tags: portfolio
 category: old

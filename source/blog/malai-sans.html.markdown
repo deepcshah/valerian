@@ -1,5 +1,5 @@
 ---
-title: Deep Shah · Malai Sans
+title: Malai Sans
 date: 2010-01-12
 tags: portfolio
 category: old

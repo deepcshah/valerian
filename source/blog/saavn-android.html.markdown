@@ -1,5 +1,5 @@
 ---
-title: Deep Shah · Saavn for Android
+title: Saavn for Android
 date: 2014-04-12
 tags: portfolio
 category: portfolio

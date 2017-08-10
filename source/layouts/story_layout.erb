@@ -13,7 +13,7 @@
       <%= Rouge::Themes::Github.render(:scope => '.highlight') %>
     </style>
 
-    <title><%= current_page.data.title || "Deep Shah" %> · Deep Shah · Designer</title>
+    <title>Deep Shah · <%= current_page.data.title || "Deep Shah" %></title>
 
     <!-- <script type="text/javascript" src="//fast.fonts.net/jsapi/41c0bf38-47c0-4468-8894-823b34c8e102.js"></script> -->
 
@@ -57,29 +57,29 @@
     <div class="row">
       <div class="column-wrap">
         <div class="column">
-          <h2 class="heading center"><a href="/work">&larr; Work</a></h2>
+          <h2 class="heading"><a href="/work">&larr; Work</a></h2>
+          <article class="work">
+            <h2 class="title"><%= current_page.data.title %></h2>
+            <p class="meta"><%= current_page.data.meta %></p>
+            <%= yield %>
+          </article>
+
+          <% prev_article = current_article.previous_article %>
+          <% next_article = current_article.next_article %>
+
+          <% featured = page_articles[rand(page_articles.size)] %>
+          <% if featured == current_article %>
+          <% featured = page_articles[rand(page_articles.size)] %>
+          <% end %>
+
+          <% if prev_article %>
+          <% featured = prev_article %>
+          <% else %>
+          <% featured = next_article %>
+          <% end %>
         </div>
       </div>
     </div>
-    <article class="work">
-      <h2 class="title"><%= current_page.data.title %></h2>
-      <p class="meta"><%= current_page.data.meta %></p>
-      <%= yield %>
-    </article>
-
-    <% prev_article = current_article.previous_article %>
-    <% next_article = current_article.next_article %>
-
-    <% featured = page_articles[rand(page_articles.size)] %>
-    <% if featured == current_article %>
-    <% featured = page_articles[rand(page_articles.size)] %>
-    <% end %>
-
-    <% if prev_article %>
-    <% featured = prev_article %>
-    <% else %>
-    <% featured = next_article %>
-    <% end %>
 
     <!-- <ul id="cards">
       <a class="card" href="<%= featured.url %>">

@@ -1,5 +1,5 @@
 ---
-title: Deep Shah · COTA Analytics
+title: COTA Analytics
 date: 2014-10-27
 tags: portfolio
 category: portfolio
