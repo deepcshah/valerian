@@ -1,0 +1,25 @@
+---
+title: Deep Shah · Work
+---
+
+<div class="row">
+  <div class="column-wrap">
+    <div class="column">
+      <h2 class="heading">Work</h2>
+      <ul id="cards">
+        <% page_articles.each_with_index do |article, i| %>
+        <% if article.data.category == 'portfolio' %>
+        <% link_to article, :class => "card" do %>
+          <div class="card-content">
+            <h3 class="meta-title"><%= article.data.title %></h3>
+            <!-- <p class="meta"><%= article.data.meta %></p> -->
+            <p><%= article.data.description %></p>
+            <p class="button">Read More &rarr;</p>
+          </div>
+        <% end %>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
