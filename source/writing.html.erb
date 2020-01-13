@@ -1,31 +1,36 @@
-<section>
-  <ul id="cards">
-    <% page_articles.each_with_index do |article, i| %>
-    <% if article.data.category == 'writing' %>
-    <li class="card">
-      <% link_to article, :title => "#{article.title}", :class => "thumbnail #{article.data.color}" do %>
-        <img class="2x grey" src="<%= article.data.thumbnail %>"/>
-        <div class="meta">
-          <h3><%= article.data.title %></h3>
-          <p><%= article.data.description %></p>
-        </div>
-      <% end %>
-    </li>
-    <% end %>
-    <% end %>
-  </ul>
+---
+title: Deep Shah · Work
+---
 
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
-
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
-<% end %>
-</section>
+<div class="row">
+  <div class="column-wrap">
+    <div class="column">
+      <!-- <div>
+        <h2 class="heading">MongoDB</h2>
+        <p>I’m currently designing at MongoDB. I’m currently working on the <a class="mongodb" href="https://www.mongodb.com/cloud/stitch">Stitch</a> team, finding ways to increase developer productivity by focusing on creating a backend-as-a-service product.</p>
+      </div>
+      <span class="separator"></span>
+      <div>
+        <h2 class="heading">Behalf</h2>
+        <p>During my short tenure at <a class="mongodb" href="https://www.behalf.com">Behalf</a>, I worked on a variety of projects. The majority of my projects were on the Virality squad. There, I focused my efforts on increasing repeat lending business for the customers of vendors on our platform. I found ways to help customers add their other vendors onto the platform, to surface vendors customers want to pay but might not know are on the platform, and greatly reducing friction for sending a payment.</p>
+        <p>I also designed ways to surface sensitive and timely information to customers about their credit status, risk information, and any action items they need to be aware of. This was tricky since we need to be careful not only about how information it is safe to show for fiduciary purposes, but also what is the right information to display so the customer knows how much to repay, what their credit is, and who they have paid.</p>
+      </div>
+      <span class="separator"></span>
+      <h2 class="heading">Previous Case Studies</h2> -->
+      <ul id="cards">
+        <% page_articles.each_with_index do |article, i| %>
+        <% if article.data.category == 'portfolio' %>
+        <% link_to article, :class => "card" do %>
+          <div class="card-content">
+            <h3 class="meta-title"><%= article.data.title %></h3>
+            <!-- <p class="meta"><%= article.data.meta %></p> -->
+            <p><%= article.data.description %></p>
+            <p class="button">Read More &rarr;</p>
+          </div>
+        <% end %>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

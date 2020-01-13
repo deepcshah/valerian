@@ -1,6 +1,6 @@
 ---
 title: COTA Clinic
-date: 2014-10-26
+date: 2016-01-26
 tags: portfolio
 category: portfolio
 company: COTA

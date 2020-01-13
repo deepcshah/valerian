@@ -1,6 +1,6 @@
 ---
 title: COTA Analytics
-date: 2014-10-27
+date: 2015-10-27
 tags: portfolio
 category: portfolio
 company: COTA

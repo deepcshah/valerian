@@ -1,6 +1,6 @@
 ---
 title: COTA Design Modules
-date: 2014-10-25
+date: 2015-10-25
 tags: portfolio
 category: portfolio
 company: COTA

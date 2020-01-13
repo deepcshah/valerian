@@ -5,6 +5,9 @@ $sans-serif: 'Calibre Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 // $serif: $sans-serif;
 $serif: 'Tiempos Text Web', garamond, baskerville, times, serif;
 $gujarati: 'Hind Vadodara', sans-serif;
+$transition: 0.4, -0.05, 0, 1.65;
+
+// old transition: 0.22, 0, 0.4, 1
 
 /*=========================================
 Reset
@@ -60,7 +63,8 @@ html,body {
 body {
   background: #FFFFFF;
   font: 16px/1 $serif;
-  color: rgba(72, 84, 99, 1);
+  // color: rgba(72, 84, 99, 1);
+  color: rgba(0, 0, 0, 1);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
   float: left;
@@ -103,7 +107,9 @@ body {
 }
 
 a {
-  color: rgba(35, 31, 32, 0.8);
+  // color: rgba(35, 31, 32, 0.8);
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
   position: relative;
   text-decoration: none;
   -webkit-box-sizing: border-box;
@@ -111,14 +117,15 @@ a {
   box-sizing: border-box;
   z-index: 5;
   &:before {
-    background-color: rgba(35, 31, 32, .65);
+    // background-color: rgba(35, 31, 32, .65);
+    background-color: rgba(200, 184, 15, 1);
     bottom: -2px;
     content: '';
-    height: 1px;
+    height: 2px;
     left: 0;
     opacity: .34;
     position: absolute;
-    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+    @include transition(all 300ms cubic-bezier($transition));
     width: 100%;
     z-index: -1;
   }
@@ -161,6 +168,9 @@ a {
     }
   }
   &.mongodb {
+    &:before {
+      background-color: rgba(127, 200, 86, 1);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(127, 200, 86, 1);
@@ -168,6 +178,9 @@ a {
     }
   }
   &.behalf {
+    &:before {
+      background-color: rgba(40, 202, 255, 1);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(40, 202, 255, 1);
@@ -175,6 +188,9 @@ a {
     }
   }
   &.cota {
+    &:before {
+      background-color: rgba(133, 98, 234, 1);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(133, 98, 234, 1);
@@ -182,6 +198,9 @@ a {
     }
   }
   &.saavn {
+    &:before {
+      background-color: rgba(48, 181, 90, 1);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(48, 181, 90, 1);
@@ -189,6 +208,9 @@ a {
     }
   }
   &.livestream {
+    &:before {
+      background-color: rgba(207, 32, 46, 1);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(207, 32, 46, 1);
@@ -196,6 +218,9 @@ a {
     }
   }
   &.twitter {
+    &:before {
+      background-color: rgba(29, 161, 242, 1);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(29, 161, 242, 1);
@@ -203,20 +228,89 @@ a {
     }
   }
   &.dribbble {
+    &:before {
+      background-color: rgba(234, 76, 137, 1);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(234, 76, 137, 1);
       }
     }
   }
+  &.linkedin {
+    &:before {
+      background-color: rgba(0, 119, 181, 1);
+    }
+    &:hover, &:active, &:focus {
+      &:before {
+        background-color: rgba(0, 119, 181, 1);
+      }
+    }
+  }
   &.instagram {
+    &:before {
+      background: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
       }
     }
   }
+  &.sakhi {
+    &:before {
+      background-color: rgba(94, 44, 112, 1);
+    }
+    &:hover, &:active, &:focus {
+      &:before {
+        background-color: rgba(94, 44, 112, 1);
+      }
+    }
+  }
+  &.strava {
+    &:before {
+      background-color: rgba(252, 76, 3, 1);
+    }
+    &:hover, &:active, &:focus {
+      &:before {
+        background-color: rgba(252, 76, 3, 1);
+      }
+    }
+  }
+  &.earth {
+    &:before {
+      background: linear-gradient(90deg, rgb(10, 43, 209) 0%, rgb(66, 93, 230) 25%,#1deecb 50%, rgb(190, 223, 44) 75%,rgb(13, 211, 30) 100%);
+    }
+    &:hover, &:active, &:focus {
+      &:before {
+        background: linear-gradient(90deg, rgb(10, 43, 209) 0%, rgb(66, 93, 230) 25%,#1deecb 50%, rgb(190, 223, 44) 75%,rgb(13, 211, 30) 100%);
+      }
+    }
+  }
+  &.applemusic {
+    &:before {
+      background: linear-gradient(90deg, #7C6CFF 0%, #DA5AB1 25%,#E66289 50%, #AA7EB1 75%,#4D9FFB 100%);
+    }
+    &:hover, &:active, &:focus {
+      &:before {
+        background: linear-gradient(90deg, #7C6CFF 0%, #DA5AB1 25%,#E66289 50%, #AA7EB1 75%,#4D9FFB 100%);
+      }
+    }
+  }
+  &.goodreads {
+    &:before {
+      background-color: rgba(57, 33, 16, 1);
+    }
+    &:hover, &:active, &:focus {
+      &:before {
+        background-color: rgba(57, 33, 16, 1);
+      }
+    }
+  }
   &.svbtle {
+    &:before {
+      background-color: rgba(0, 0, 0, .75);
+    }
     &:hover, &.active, &:focus {
       &:before {
         background-color: rgba(0, 0, 0, .75);
@@ -236,13 +330,13 @@ a {
   }
   &.button {
     border-radius: 100pt;
-    color: rgba(35, 31, 32, .8);
+    // color: rgba(35, 31, 32, .8);
     font-family: $sans-serif;
     font-size: .9em;
     font-weight: 600;
     text-transform: uppercase;
     padding: .5em .75em;
-    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+    @include transition(all 300ms cubic-bezier($transition));
     &:hover {
       background-color: rgba(245, 234, 119, 1);
       text-decoration: none;
@@ -265,7 +359,7 @@ p {
       left: 0;
       opacity: .34;
       position: absolute;
-      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      @include transition(all 300ms cubic-bezier($transition));
       width: 100%;
       z-index: -1;
     }
@@ -313,7 +407,7 @@ section, header, footer {
     @include justify-content(space-between);
     @include align-content(space-between);
     @include flex(1 1 calc(33% - 3em));
-    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+    @include transition(all 300ms cubic-bezier($transition));
 
     padding: 0;
     margin: 0;
@@ -382,8 +476,6 @@ section {
   &#portfolio {
     padding: 0;
   }
-  &#about {
-  }
 }
 
 img {
@@ -407,9 +499,10 @@ video {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: rgba(72, 84, 99, 1);
+  // color: rgba(72, 84, 99, 1);
+  font-family: $sans-serif;
   font-weight: 500;
-  line-height: 1.3;
+  // line-height: 1.3;
   margin-bottom: .5em;
 }
 
@@ -422,7 +515,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 1.6em;
+  line-height: 1.6;
 }
 
 h4 {
@@ -430,9 +524,9 @@ h4 {
 }
 
 p {
-  color: rgba(35, 31, 32, .8);
-  font-size: 1.2em;
-  line-height: 1.65em;
+  // color: rgba(35, 31, 32, .8);
+  font-size: 1.1em;
+  line-height: 1.8em;
   margin-bottom: 1.2em;
   &:last-child {
     margin-bottom: 0;
@@ -440,7 +534,7 @@ p {
 }
 
 .heading {
-  color: rgba(72, 84, 99, 1);
+  // color: rgba(72, 84, 99, 1);
   font-family: $sans-serif;
   line-height: 1.3;
   margin: 0 0 1em 0;
@@ -450,7 +544,7 @@ p {
 }
 
 .meta {
-  color: rgba(35, 31, 32, .65);
+  // color: rgba(35, 31, 32, .65);
   font-family: $sans-serif;
   font-size: .7em;
   letter-spacing: .75px;
@@ -458,9 +552,144 @@ p {
   text-transform: uppercase;
 }
 
+.sans {
+  font-family: $sans-serif;
+}
+
+.about-bio-full p {
+  padding: 60px 0 40px 0;
+  position: relative;
+  &:before {
+    content: ".";
+    text-indent: -5000px;
+    color: rgba(255, 255, 255, 0.01);
+    width: 1px;
+    height: 90px;
+    position: absolute;
+    border-radius: 100px;
+    // background: #BCDED4;
+    background: rgb(238, 200, 30);
+    top: -50px;
+    left: 0px;
+  }
+  &:after {
+    content: ".";
+    text-indent: -5000px;
+    color: rgba(255, 255, 255, 0.01);
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    border-radius: 100px;
+    // border: 1px solid #BCDED4;
+    border:1px solid rgb(238, 200, 30);
+    box-shadow: 0 0 0 2px #fff;
+    background: rgb(238, 200, 30);
+    top: -13px;
+    left: 0px;
+    margin-left: -4px;
+  }
+  &.first {
+    &:before {
+      height: 45px;
+      top: -2px;
+    }
+  }
+}
+
+.story-date {
+  color: rgb(238, 200, 30);
+  margin-left: 15px;
+  font-family: $sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .fade {
-  color: rgba(35, 31, 32, .35);
+  color: rgba(35, 31, 32, .65);
   margin: 0;
+  a {
+    color: rgba(35, 31, 32, .65);
+  }
+}
+
+/* Switch */
+
+.switch {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  &.small {
+    width: 35px;
+    height: 20px;
+  }
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  @include transition(all 300ms cubic-bezier($transition));
+  &:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    @include transition(all 300ms cubic-bezier($transition));
+  }
+  &.small {
+    &:before {
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+    }
+  }
+  &.round {
+    border-radius: 34px;
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+input:checked + .slider.small:before {
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+/* End Switch */
+
+[data-bio] {
+  cursor: pointer;
 }
 
 em, .em {
@@ -490,7 +719,7 @@ Header
     margin-bottom: 0;
     a {
       display: flex;
-      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      @include transition(all 300ms cubic-bezier($transition));
       &:before {
         background: none;
       }
@@ -535,7 +764,7 @@ Header
         align-self: center;
         margin-left: auto;
         position: absolute;
-        @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+        @include transition(all 300ms cubic-bezier($transition));
         width: 100%;
         &-one {
           top: 0px;
@@ -594,14 +823,14 @@ Header
       }
       a {
         color: rgba(35, 31, 32, .5);
-        @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+        @include transition(all 300ms cubic-bezier($transition));
         &:before {
-          background: none;
+          // background: none;
         }
         &:hover, &.active, &:focus {
           color: rgba(35, 31, 32, 1);
           &:before {
-            background: none;
+            // background: none;
           }
         }
       }
@@ -644,7 +873,7 @@ Animation Classes
       transform-origin: 50% 70%;
       animation-timing-function: ease-in-out;
       display: inline-flex;
-      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      @include transition(all 300ms cubic-bezier($transition));
     }
   }
 }
@@ -706,7 +935,7 @@ Cards
     @include align-content(space-between);
     @include flex(1 1 calc(33% - 3em));
 
-    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+    @include transition(all 300ms cubic-bezier($transition));
 
     @include clearfix;
 
@@ -715,7 +944,7 @@ Cards
     }
 
     .button {
-      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      @include transition(all 300ms cubic-bezier($transition));
     }
 
     &:hover {
@@ -768,14 +997,14 @@ Cards
       opacity: 1;
       outline: none;
       overflow: hidden;
-      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      @include transition(all 300ms cubic-bezier($transition));
       img {
         display: block;
         opacity: 1;
         outline: none;
         // transform: scale(1.1);
         margin: 0;
-        // @include transition(all 260ms cubic-bezier(0.22, 0, 0.4, 1));
+        // @include transition(all 260ms cubic-bezier($transition));
       }
       &:hover {
         opacity: .85;
@@ -783,7 +1012,7 @@ Cards
       }
     }
     .meta-title {
-      color: rgba(72, 84, 99, 1);
+      // color: rgba(72, 84, 99, 1);
       border-bottom: 1px solid rgba(255, 255, 255, 0);
       // font-size: 1.6em;
       font-weight: 400;
@@ -803,7 +1032,7 @@ Cards
     }
 
     h3 {
-      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      @include transition(all 300ms cubic-bezier($transition));
     }
 
     p {
@@ -919,6 +1148,9 @@ article {
     float: initial;
     width: auto;
   }
+  h1 {
+    margin: 0 0 .5em 0;
+  }
   h2 {
     font-weight: 400;
     margin: 0 0 .1em 0;
@@ -930,9 +1162,6 @@ article {
   h3 {
     font-weight: 400;
     margin: 1em 0;
-  }
-  h1 {
-    margin: 0 0 .5em 0;
   }
   p {
     color: rgba(35, 31, 32, 0.8);
@@ -1058,7 +1287,7 @@ Library
   &-link {
     align-self: flex-start;
     margin-bottom: .5em;
-    @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+    @include transition(all 300ms cubic-bezier($transition));
     transform: scale(1.0);
     &:before {
       bottom: 0px;
@@ -1125,7 +1354,7 @@ Footer
         transform-origin: 50% 70%;
         animation-timing-function: ease-in-out;
         display: inline-flex;
-        @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+        @include transition(all 300ms cubic-bezier($transition));
       }
     }
   }
@@ -1177,7 +1406,7 @@ Footer
       @include flex(1 1 calc(33% - 3em));
       flex: 1 0 auto;
       @include flex(1 0 auto);
-      @include transition(all 300ms cubic-bezier(0.22, 0, 0.4, 1));
+      @include transition(all 300ms cubic-bezier($transition));
       @include clearfix;
       margin: .5em; */
       @include flex(auto);
