@@ -91,6 +91,10 @@ body {
   }
 }
 
+.no-padding {
+  padding: 0 !important;
+}
+
 .separator {
   @include display(flex);
   @include flex-direction(row);
@@ -103,6 +107,27 @@ body {
     background-color: rgba(35, 31, 32, 0.2);
     height: 1px;
     width: 25%;
+  }
+}
+
+.posts {
+  display: block;
+  font-family: $sans-serif;
+  list-style-type: none;
+  margin: 0 0 20px 0;
+  position: relative;
+  li {
+    display: block;
+    list-style-type: none;
+    position: relative;
+    margin: 0 0 10px 0;
+    a {
+      font-size: 1.2em;
+    }
+    // p {
+    //   font-size: 1.5em;
+    //   margin: 0;
+    // }
   }
 }
 
